@@ -1,0 +1,17 @@
+<h1><%= @author.fullname %></h1>
+<p>
+    Name: 
+        <%= @author.name %>
+        <hr />
+    Surname: 
+        <%= @author.surname %> 
+        <hr />
+    Age:
+        <%= @author.age %>
+        <hr />
+    Created at:
+        <%= @author.created_at %>
+        <hr />
+        <%= link_to 'To posts', posts_path %>
+        <%= link_to 'To authors', authors_path %>
+</p>

@@ -1,0 +1,21 @@
+<h1><%= @post.title %></h1>
+<p>
+    Title: 
+        <%= @post.title %>
+        <hr />
+    Surname: 
+        <%= @post.content %> 
+        <hr />
+
+        <%= link_to 'Back to posts', posts_path %>
+        <!-- TODO: change this to render dynamically - REACT? :)  -->
+        <%= link_to 'Comment this post', new_comment_path(post_id: @post.id) %>
+</p>
+<h2> Post comments: </h2>
+<% if @post_comments.any? %>
+    <ul>
+        <% @post_comments.each do |comment| %>
+                <li><%= comment.content %></li>
+        <% end %>
+    </ul>    
+<% end %>

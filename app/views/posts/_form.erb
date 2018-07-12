@@ -1,0 +1,18 @@
+<%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <hr />
+    <%= f.label :content %>
+    <%= f.text_area :content, cols: 20, rows: 10 %>
+   <hr />
+     <%= f.label :author_id %>
+    <%= f.select :author_id,  @authors_list %>
+    <hr />
+    <%= f.submit 'Save'%>
+<% end %>
+
+
+
+
+
+
