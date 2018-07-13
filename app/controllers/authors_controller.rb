@@ -2,6 +2,7 @@ class AuthorsController < ApplicationController
     
     def index 
         @authors = Author.all
+        @author = Author.new
     end
 
     def show 
@@ -14,12 +15,14 @@ class AuthorsController < ApplicationController
 
     def create 
         @author = Author.new(author_params)
-        if @author.save 
-            # redirect_to pozostanie w kontekscie -> @author 
-            redirect_to authors_path, notice: 'Author was created!'
-        else
-           render :new
-        end
+        # if @author.save 
+        #     # redirect_to pozostanie w kontekscie -> @author 
+        #     redirect_to authors_path, notice: 'Author was created!'
+        # else
+        #    render :new
+        # end
+        # nie interesuje nas czy sie zapisal czy nie 
+        @author.save
     end
 
     def edit
@@ -39,7 +42,7 @@ class AuthorsController < ApplicationController
     def destroy 
         @author = Author.find(params[:id])        
         @author.destroy
-        redirect_to authors_path, alert: 'Author was destroyed!'
+        #redirect_to authors_path, alert: 'Author was destroyed!'
     end
 
     private
