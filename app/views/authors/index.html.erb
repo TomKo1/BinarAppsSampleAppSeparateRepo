@@ -4,21 +4,21 @@
     <!-- change this for sth other -->
     <img style="display: none;" src="https://media.giphy.com/media/N256GFy1u6M6Y/giphy.gif"/>
 </div>
-    <div class='container authors'>
-        
-        <% @authors.each do |author| %>
-            <%= render 'author', author: author %>
-        <% end %>
-        
-    </div>
+<!-- should I localize elements in JS using ids -->
+<div class='container'>
+        <table class='table table-striped' id='authors'>
+                <thead>
+                        <th scope='col'>Full name</th>
+                        <th scope='col'>Edit</th>
+                        <th scope='col'>Delete</th>
+                </thead>    
+                <% @authors.each do |author| %>      
+                        <%= render 'author', author: author %>
+                <% end %>
+        </table>
+</div>
     
-<% if @author.errors.any?%>
-    <ul>
-        <% @author.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-<% end %>
-    </ul>
-<% end %>
+
 <div class='container'>
         <!-- get rid of this -->
         <h1 class='text-center'>Add new author:</h1>
