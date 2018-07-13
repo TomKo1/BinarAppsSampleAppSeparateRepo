@@ -1,5 +1,7 @@
 <div class='jumbotron'>
-    <h1>List of all authors</h1>
+    <!-- get rid of this -->
+    <h1 class='text-center'>List of all authors</h1>
+    <!-- change this for sth other -->
     <img style="display: none;" src="https://media.giphy.com/media/N256GFy1u6M6Y/giphy.gif"/>
 </div>
     <div class='container authors'>
@@ -10,16 +12,15 @@
         
     </div>
     
-    <hr />
-   <% if @author.errors.any?%>
+<% if @author.errors.any?%>
     <ul>
-         <% @author.errors.full_messages.each do |msg| %>
+        <% @author.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
-         <% end %>
+<% end %>
     </ul>
 <% end %>
-<h1><Add new author:</h1>
-
-
-    <h1><Add new author:</h1>
-    <%= render 'form' %>
+<div class='container'>
+        <!-- get rid of this -->
+        <h1 class='text-center'>Add new author:</h1>
+        <%= render 'form' %>
+</div>
