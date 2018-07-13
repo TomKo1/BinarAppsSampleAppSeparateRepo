@@ -1,9 +1,8 @@
 <!-- TODO: upgrade it -->
+<!-- TODO: display it as https://getbootstrap.com/docs/4.0/components/list-group/ -->
 <div class='container'>
     <% @results.each do |result| %>
-        <%= result.content %>
+        <%= result.get_title_content %>
         <hr />
     <% end %>     
 </div>
-
-

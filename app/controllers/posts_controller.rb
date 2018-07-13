@@ -1,6 +1,10 @@
 class PostsController < ApplicationController 
+     
+    # modified CRUD -> we can both create and display all authors
     def index 
-        @posts = Post.all
+        @posts = Post.paginate(:per_page => 5, :page => params[:page])
+        @post = Post.new
+        @authors_list = Author.all.map{ |t| [t.name, t.id] }
     end
 
     def show 
@@ -10,8 +14,6 @@ class PostsController < ApplicationController
     end
 
     def new
-        @post = Post.new
-        @authors_list = Author.all.map{ |t| [t.name, t.id] }
     end
 
     def create 

@@ -1,18 +1,12 @@
-<%= form_for @post do |f| %>
+<%= form_for @post, html: { class: 'form-group' } do |f| %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
-    <hr />
+    <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
+    
     <%= f.label :content %>
-    <%= f.text_area :content, cols: 20, rows: 10 %>
-   <hr />
-     <%= f.label :author_id %>
-    <%= f.select :author_id,  @authors_list %>
-    <hr />
-    <%= f.submit 'Save'%>
+    <%= f.text_area :content, cols: 5, rows: 5, placeholder: 'Content', class: 'form-control' %>
+   
+    <%= f.label :author_id %>
+    <%= f.select :author_id,  @authors_list, class: 'form-control' %>
+   
+    <%= f.submit 'Save', class: 'btn btn-primary mt-2'%>
 <% end %>
-
-
-
-
-
-

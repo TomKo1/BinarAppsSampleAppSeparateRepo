@@ -1,21 +1,29 @@
-<h1><%= @post.title %></h1>
-<p>
-    Title: 
-        <%= @post.title %>
-        <hr />
-    Surname: 
-        <%= @post.content %> 
-        <hr />
+<div class='container'>
+    <h1><%= @post.title %></h1>
+    <p>
+        Title: 
+            <%= @post.title %>
+            <hr />
+        Surname: 
+            <%= @post.content %> 
+            <hr />
 
-        <%= link_to 'Back to posts', posts_path %>
-        <!-- TODO: change this to render dynamically - REACT? :)  -->
-        <%= link_to 'Comment this post', new_comment_path(post_id: @post.id) %>
-</p>
-<h2> Post comments: </h2>
-<% if @post_comments.any? %>
-    <ul>
-        <% @post_comments.each do |comment| %>
-                <li><%= comment.content %></li>
+            <%= link_to 'Back to posts', posts_path %>
+            <!-- TODO: change this to render dynamically - REACT? :)  -->
+            <%= link_to 'Comment this post', new_comment_path(post_id: @post.id) %>
+    </p>
+
+</div>
+<div class='container'>
+    <h2> Post comments: </h2>
+        <% if @post_comments.any? %>
+            
+                <% @post_comments.each do |comment| %>
+                      
+                    <!-- te karty beda sie chyba rozserzac ==> balagan -->
+                        <%= render 'comment', comment: comment %>
+                <% end %>
+             
         <% end %>
-    </ul>    
-<% end %>
+</div>
+

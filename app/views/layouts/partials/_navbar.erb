@@ -18,7 +18,6 @@
         <%= link_to 'Posts', posts_path, class: 'nav-link' %>
       </li>
     </ul>
-
     <!-- small searching engine -->
     <%= form_tag search_post_path, method: :get, class: 'form-inline my-2 my-lg-0' do %>
         <%= text_field_tag :lookup, nil, class: 'form-control mr-sm-2' %>

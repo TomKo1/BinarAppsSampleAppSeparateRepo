@@ -11,10 +11,7 @@ class Post < ActiveRecord::Base
    
    scope :old, -> { where('created_at < ?', 40.minutes.ago) }
 
-   # call backs -> before i after
-#   before_create :annotate_author 
-
-#    def annotate_author
-#         self.author = "#{author} from BinarApps"
-#    end
+    def get_title_content
+        "#{title}|#{content}"        
+    end
 end

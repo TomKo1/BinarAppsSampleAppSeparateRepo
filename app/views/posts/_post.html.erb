@@ -1,0 +1,6 @@
+<tr>
+    <th scope='row'><%= link_to post.title, post_path(id: post.id)  %></th>
+    <th scope='row'><%= link_to 'Edit', edit_post_path(id: post.id), role: 'button', class: 'btn btn-primary' %></th>   
+    <th scope='row'><%= link_to 'Delete', post_path(id: post.id), method: :delete, data: {confirm: 'Are you sure?'}, role: 'button', class: 'btn btn-danger' %></th>   
+    <th scope='row'><%= link_to 'Author', author_path(id: post.author_id), role: 'button', class: 'btn btn-info' %></th>
+</tr>   
