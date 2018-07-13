@@ -6,7 +6,9 @@
 </div>
 <!-- should I localize elements in JS using ids -->
 <div class='container'>
-        <table class='table table-striped' id='authors'>
+        <%= will_paginate @authors %>
+
+        <table class='table table-striped mt-4' id='authors'>
                 <thead>
                         <th scope='col'>Full name</th>
                         <th scope='col'>Edit</th>

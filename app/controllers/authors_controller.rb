@@ -1,7 +1,8 @@
 class AuthorsController < ApplicationController 
     
+    # modified CRUD -> we can both create and display all authors
     def index 
-        @authors = Author.all
+        @authors = Author.paginate(:per_page => 5, :page => params[:page])
         @author = Author.new
     end
 
@@ -9,19 +10,8 @@ class AuthorsController < ApplicationController
          @author = Author.find(params[:id])
     end
 
-    def new
-        @author = Author.new
-    end
-
     def create 
         @author = Author.new(author_params)
-        # if @author.save 
-        #     # redirect_to pozostanie w kontekscie -> @author 
-        #     redirect_to authors_path, notice: 'Author was created!'
-        # else
-        #    render :new
-        # end
-        # nie interesuje nas czy sie zapisal czy nie 
         @author.save
     end
 
@@ -32,7 +22,6 @@ class AuthorsController < ApplicationController
     def update 
         @author = Author.find(params[:id])
         if @author.update(author_params) 
-            # redirect_to pozostanie w kontekscie -> @author 
             redirect_to authors_path, notice: 'Author was updated!'
         else
            render :edit
@@ -42,7 +31,6 @@ class AuthorsController < ApplicationController
     def destroy 
         @author = Author.find(params[:id])        
         @author.destroy
-        #redirect_to authors_path, alert: 'Author was destroyed!'
     end
 
     private
