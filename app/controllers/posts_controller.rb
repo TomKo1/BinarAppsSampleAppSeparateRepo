@@ -49,6 +49,17 @@ class PostsController < ApplicationController
         redirect_to posts_path, alert: 'Post was destroyed!'
     end
 
+    # action for searching engine in navbar
+    def search_posts
+        query = params[:lookup]
+        if query.blank? != true 
+            @results = Post.where('title LIKE ? OR content like ?', "%#{query}%","%#{query}%") 
+        else
+           redirect_to root_path, alert: 'Searching query should not be blank!'
+        end
+    end
+
+
     private
 
         def post_params
