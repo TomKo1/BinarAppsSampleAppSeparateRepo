@@ -1,17 +1,31 @@
-<h1><%= @author.fullname %></h1>
-<p>
-    Name: 
-        <%= @author.name %>
-        <hr />
-    Surname: 
-        <%= @author.surname %> 
-        <hr />
-    Age:
-        <%= @author.age %>
-        <hr />
-    Created at:
-        <%= @author.created_at %>
-        <hr />
-        <%= link_to 'To posts', posts_path %>
-        <%= link_to 'To authors', authors_path %>
-</p>
+<div class='container'>    
+    <h1 class='text-center'><%= @author.fullname %></h1>
+    <table class='table'> 
+        <thead class='thead-dark'>
+            <tr>
+                <th scope='col'></th>
+                <th scope='col'></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- some loop and extract to global partial ??-->
+            <tr>
+                <td>Name:</td>
+                <td><%= @author.name %></td>
+            </tr>
+            <tr>
+                <td>Surname:</td>
+                <td><%= @author.surname%></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><%= @author.age %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class='container'>
+        <%= link_to 'To posts', posts_path, role: 'button', class: 'btn btn-info mr-2' %>
+        <%= link_to 'To authors', authors_path, role: 'button', class: 'btn btn-info mr-2' %>
+</div>
