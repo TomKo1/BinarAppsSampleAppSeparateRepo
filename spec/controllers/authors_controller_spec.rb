@@ -31,8 +31,11 @@ RSpec.describe AuthorsController, type: :controller do
 
      end
 
-     describe 'creation of new author' do 
 
+     # how to test ajax ?????
+     describe 'creation of new author' do 
+        
+        # TODO: end this
         it 'should create author using ajax' do
             # dane na stale to moze byc slaby pomysl
             expect { 
@@ -42,11 +45,24 @@ RSpec.describe AuthorsController, type: :controller do
             #expect(index).to have_selector('tr.th', count: 1)
         end
 
-        # it 'should remain at new when quote not valid' do 
-        #     post 'create', :params => { :quote => { quotation: nil } }
-        #     expect(response).to render_template(:new)
-        # end
+        it 'ajax should display alert if author was not valid while saving' do 
+            # how to check for alert presence?
+            expect { 
+                post :create, xhr: true, :params => { :author => { surname: 'Kovalsky', age: 32 } } 
+            }.not_to change { Author.count }
+        end
     end 
+
+    describe 'destroy author' do
+        let!(:author_to_destroy) { create(:author) }
+
+        it 'should destroy author' do 
+            expect{   
+                 delete :destroy,xhr: true ,:params => { id: author_to_destroy.id }
+            }.to change { Author.count}
+        end
+
+    end
 
 
 end

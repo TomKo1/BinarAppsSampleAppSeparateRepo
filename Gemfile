@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.0'
 gem 'haml'
 # for pagination
 gem 'will_paginate', '~> 3.1.0'
+# for custom alert
+gem 'jquery-ui-rails'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
