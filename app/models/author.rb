@@ -3,7 +3,7 @@ class Author < ActiveRecord::Base
   #has_many :posts, through: :author_posts
   before_validation :default_age
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   
   validates :name, presence: true, length: { in: 3..20}
   validates :surname, presence: true, length: { maximum: 30 }

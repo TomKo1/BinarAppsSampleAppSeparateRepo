@@ -1,29 +1,33 @@
 <div class='container'>
-    <h1><%= @post.title %></h1>
-    <p>
-        Title: 
-            <%= @post.title %>
-            <hr />
-        Surname: 
-            <%= @post.content %> 
-            <hr />
-
-            <%= link_to 'Back to posts', posts_path %>
-            <!-- TODO: change this to render dynamically - REACT? :)  -->
-            <%= link_to 'Comment this post', new_comment_path(post_id: @post.id) %>
-    </p>
-
+    <h1 class='text-center'><%= @post.title %></h1>
+        <table class='table'>
+            <tbody>
+                <tr>
+                    <th scope='row'>Title:</th>
+                    <td><%= @post.title %></td>
+                </tr>
+                <tr>
+                    <th scope='row'>Content:</th>
+                    <td><%= @post.content %></td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td><%= link_to 'Back to posts', posts_path,role: 'button', class: 'btn btn-info' %></td>
+                        <!-- TODO: change this to render dynamically - REACT? :)  -->
+                        <td><%= link_to 'Comment this post', new_comment_path(post_id: @post.id), role: 'button', class: 'btn btn-info' %></td>
+                    </tr>
+                </tfoot>
+            </tbody>
+        </table>
 </div>
+
 <div class='container'>
     <h2> Post comments: </h2>
         <% if @post_comments.any? %>
             
                 <% @post_comments.each do |comment| %>
-                      
-                    <!-- te karty beda sie chyba rozserzac ==> balagan -->
+                         <!-- te karty beda sie chyba rozserzac ==> balagan -->
                         <%= render 'comment', comment: comment %>
                 <% end %>
-             
         <% end %>
 </div>
-
