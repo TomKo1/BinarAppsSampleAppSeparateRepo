@@ -24,7 +24,9 @@ class PostsController < ApplicationController
             # redirect_to pozostanie w kontekscie -> @author 
             redirect_to posts_path, notice: 'Post was created!'
         else
-           render :new
+            #TODO: fix this -> this is temporary
+            #flash[:alert] = 'Form cotains errors'
+            redirect_to posts_path, alert: 'Form contains errors'
         end
     end
 

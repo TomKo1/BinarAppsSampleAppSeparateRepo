@@ -1,5 +1,5 @@
 $(function() {
-    
+    //todo: widnow for deleting :) 
     // override alert with custome one 
     window.alert = function(msg) { 
         // create div with appriopriate attributes
