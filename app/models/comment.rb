@@ -6,6 +6,4 @@ class Comment < ActiveRecord::Base
 
    validates :content, presence: true
 
-   #scope :fresh_comments, -> { where('created_at < ?', 10.minutes.ago }
-
 end

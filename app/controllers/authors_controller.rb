@@ -19,9 +19,10 @@ class AuthorsController < ApplicationController
         @author = Author.find(params[:id])
     end
 
+    #TODO: make it use AJAX -> we don't have to reload whole table (?)
     def update 
         @author = Author.find(params[:id])
-        if @author.update(author_params) 
+        if @author.update(author_params)  
             redirect_to authors_path, notice: 'Author was updated!'
         else
            render :edit
