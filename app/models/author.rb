@@ -1,6 +1,5 @@
 class Author < ActiveRecord::Base
-  #has_many :author_posts
-  #has_many :posts, through: :author_posts
+  
   before_validation :default_age
 
   has_many :posts, dependent: :destroy

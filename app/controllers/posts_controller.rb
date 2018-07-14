@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
     def create 
         @post = Post.new(post_params)
-        @authors_list = Author.all.map{ |t| [t.name, t.id] }
+        authors_list = Author.all.map{ |t| [t.name, t.id] }
 
         if @post.save 
             # redirect_to pozostanie w kontekscie -> @author 

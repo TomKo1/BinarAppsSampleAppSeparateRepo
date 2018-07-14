@@ -1,8 +1,12 @@
-<!-- TODO: upgrade it -->
-<!-- TODO: display it as https://getbootstrap.com/docs/4.0/components/list-group/ -->
 <div class='container'>
-    <% @results.each do |result| %>
-        <%= result.get_title_content %>
-        <hr />
-    <% end %>     
+    <% if @results.empty? %> 
+            <p>No elements were found</p>
+    <% else %>
+    <!-- TODO: upgrade it -->
+    <!-- TODO: display it as https://getbootstrap.com/docs/4.0/components/list-group/ -->
+        <% @results.each do |result| %>
+            <%= result.get_title_content %>
+            <hr />
+        <% end %>   
+    <% end %>  
 </div>

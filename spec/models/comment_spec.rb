@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-# co testujemy
 RSpec.describe Comment, type: :model do 
     describe 'validation' do 
         # it 'should have content present' do 
