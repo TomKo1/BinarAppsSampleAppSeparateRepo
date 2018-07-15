@@ -1,0 +1,8 @@
+= form_for @author, remote: true, html: {id: 'author_new_form', class: 'form-group' }  do |f|
+    = f.label :name
+    = f.text_field :name, placeholder: 'First name', class: 'form-control'
+    = f.label :surname
+    = f.text_field :surname, placeholder: 'Surname', class: 'form-control'
+    = f.label :age
+    = f.number_field :age,min: 1 ,max: 150, class: 'form-control'
+    = f.submit 'Save', class: 'btn btn-primary mt-2'

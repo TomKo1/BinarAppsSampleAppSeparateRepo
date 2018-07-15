@@ -4,4 +4,4 @@
     %h5.card-title= post.title
     %p.card-text= post.content
     %p.card-text= localize(post.created_at, format: :long)
-    %a.btn.btn-primary{href: "#"} Not yet working
+    = link_to 'View this post', post_path(id: post.id), class: 'btn btn-primary'

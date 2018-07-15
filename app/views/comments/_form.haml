@@ -1,0 +1,6 @@
+= form_for @comment, url: comment_path(@comment), html: {class: 'form-group' } do |f|
+    = f.label :content
+    = f.text_area :content, cols: 20, rows: 10, class: 'form-control'
+    %hr/
+    = f.hidden_field :post_id, value: @post_id
+    = f.submit 'Save'

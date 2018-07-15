@@ -1,16 +1,16 @@
-<div class='jumbotron'>
-    <!-- get rid of this -->
-    <h1 class='text-center'>List of all authors</h1>
-</div>
+
 <!-- should I localize elements in JS using ids -->
 <div class='container'>
-     
+        <div class='jumbotron'>
+                <!-- get rid of this -->
+                <h1 class='text-center'>List of all authors</h1>
+        </div>
         <%= will_paginate @authors, class: 'digg_pagination' %>
    
         <table class='table table-striped mt-4' id='authors'>
                 <thead>
                         <th scope='col'>Full name</th>
-                        <th scope='col'>Edit</th>
+                        <th scope='col'>Edit</th> 
                         <th scope='col'>Delete</th>
                 </thead>
                 <tbody>    

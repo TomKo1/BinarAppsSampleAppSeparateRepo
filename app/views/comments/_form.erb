@@ -1,8 +1,0 @@
-<%= form_for @comment, url: comment_path(@comment) do |f| %>
-    <hr/>
-    <%= f.label :content %>
-    <%= f.text_area :content, cols: 20, rows: 10 %>
-    <hr/>
-    <%= f.hidden_field :post_id, value: @post_id  %>
-    <%= f.submit 'Save'%>
-<% end %>
