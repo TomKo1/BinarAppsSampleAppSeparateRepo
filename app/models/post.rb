@@ -10,8 +10,14 @@ class Post < ActiveRecord::Base
    validates :content, length: { in: 10..500 }
    
    scope :old, -> { where('created_at < ?', 40.minutes.ago) }
+ 
 
     def get_title_content
         "#{title}|#{content}"        
+    end
+
+    # to long to be scope 
+    def self.ten_latest
+        Post.order('updated_at').limit(10)
     end
 end

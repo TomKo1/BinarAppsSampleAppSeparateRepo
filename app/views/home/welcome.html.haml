@@ -1,0 +1,13 @@
+.container
+  %h1.text-center Welcome on the sample blog!
+  %hr/
+  / class with h1 is not a good idea
+  / maybe some ajax?
+  / bad card positioning but works on iPad ;>
+  / TODO:  view shouldn't contain any 'big' logic
+  - @top_posts.each_slice(2) do |slice|
+    .row
+      .col-md-6.col-sm-12
+        = render 'card', post: slice[0] if !slice[0].nil?
+      .col-md-6.col-sm-12
+        = render 'card', post: slice[1] if !slice[1].nil?

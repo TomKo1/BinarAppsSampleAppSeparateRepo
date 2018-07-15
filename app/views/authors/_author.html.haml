@@ -1,0 +1,6 @@
+%tr{"data-author-id" => "#{author.id}"}
+  %th{scope: "row"}= link_to author.fullname, author_path(id: author.id)
+  %td
+    = link_to 'edit', edit_author_path(id: author.id), role: 'button', class: 'btn btn-primary'
+  %td
+    = link_to 'delete', author_path(id: author.id), method: :delete, remote: true ,data: {confirm: 'Are you sure?'}, role: 'button', class: 'btn btn-danger'

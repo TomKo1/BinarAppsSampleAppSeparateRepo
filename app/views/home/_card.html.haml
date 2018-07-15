@@ -1,0 +1,7 @@
+.card{style: "width: 18rem;"}
+  = image_tag 'rails_logo.png', class: 'img card-img-top', alt: 'Card image top'
+  .card-body
+    %h5.card-title= post.title
+    %p.card-text= post.content
+    %p.card-text= localize(post.created_at, format: :long)
+    %a.btn.btn-primary{href: "#"} Not yet working
