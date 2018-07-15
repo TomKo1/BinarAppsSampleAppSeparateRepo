@@ -1,9 +1,9 @@
 $(function() {
     $('.navbar').autoHidingNavbar({
-        // rails wtf why not bower install ? :-(
+        // rails learn bower install  :-(
         // see next for specifications
         showOnUpscroll: true,
         showOnBottom: true,
-        animationDuration: '400'
+        animationDuration: '50'
       });
 });
