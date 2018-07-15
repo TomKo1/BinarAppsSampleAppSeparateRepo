@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+      <!-- What a shame I can't type bower install :( -->
+      <script src="jquery.bootstrap-autohidingnavbar.min.js"></script>
       <%= favicon_link_tag 'blog.png' %>
       <!-- for bootstrap -->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>   
@@ -16,11 +18,14 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+   
   </head>
 
   <body>
+    <div class='container'>
+      <%= render 'layouts/partials/flash'%>
+    </div>
     <%= render 'layouts/partials/navbar'%>
-    <%= render 'layouts/partials/flash'%>
 
     <%= yield %>
   

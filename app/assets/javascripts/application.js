@@ -15,3 +15,5 @@
 //= require turbolinks
 //*= require jquery-ui
 //= require_tree .
+//= require jquery.bootstrap-autohidingnavbar
+// what a shame I can't type bower install and install it directly! :( 
